@@ -1,0 +1,13 @@
+//Purpose
+Programcontrol connects person B to person A
+
+//tasks
+-get a number and convert that to a file name
+-get the files from dataFolder and make that into a list
+
+//Tests made:
+-check if I get my list of files, make sure length of list greater than 0,
+-check if name of file is there
+-make sure the contents of 01 is whats in filea.txt
+
+

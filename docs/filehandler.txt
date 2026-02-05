@@ -1,0 +1,31 @@
+// Purpose
+The FileHandler component is responsible for reading data files and handles all the direct access to files.
+
+// Tasks
+- Locate data/ directory that contains mission text files
+- List available data files
+- Read contents of a requested file
+- Handle file-related errors
+- Read cipher keys from ciphers/ directory
+
+// Planned Tests
+
+1. List Available Files
+- User wants files listed
+- Method returns a list of filenames
+
+2. Read File
+- readFile method called
+- Contents of file are returned as a String
+
+3. Missing File
+- readFile method called when file does not exist
+- Return an error or empty String
+
+4. Empty Data Directory
+- User wants files listed
+- Return empty list
+
+5. Cipher Key input
+- cipherKey method called
+- Character map returned

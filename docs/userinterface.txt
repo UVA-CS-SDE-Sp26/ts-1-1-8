@@ -1,0 +1,28 @@
+
+Command Options:
+
+1. No Arguments
+Command:
+java topsecret
+
+Behavior:
+Displays a numbered list of available files and exits.
+
+2. One Argument (File Number)
+Command:
+java topsecret 01
+
+Behavior:
+Displays the contents of the selected file using the default cipher key and exits.
+
+3. Two Arguments (File Number and Cipher Key)
+Command:
+java topsecret 01 SECRETKEY
+
+Behavior:
+Displays the contents of the selected file using the provided cipher key and exits.
+
+Error Handling:
+- If an invalid file number is provided, an error message is displayed.
+- If too many arguments are provided, an error message is displayed.
+- After an error message, the program exits.

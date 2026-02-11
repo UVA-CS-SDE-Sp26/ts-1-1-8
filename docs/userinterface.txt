@@ -1,28 +1,45 @@
+// Purpose
 
-Command Options:
-
+//Command Options:
 1. No Arguments
 Command:
 java topsecret
-
 Behavior:
 Displays a numbered list of available files and exits.
 
 2. One Argument (File Number)
 Command:
 java topsecret 01
-
 Behavior:
 Displays the contents of the selected file using the default cipher key and exits.
 
 3. Two Arguments (File Number and Cipher Key)
 Command:
 java topsecret 01 SECRETKEY
-
 Behavior:
 Displays the contents of the selected file using the provided cipher key and exits.
 
-Error Handling:
-- If an invalid file number is provided, an error message is displayed.
-- If too many arguments are provided, an error message is displayed.
-- After an error message, the program exits.
+
+//Tests:
+
+1. When no arguments are provided:
+   - The program should list all available files.
+   - The program should exit after listing files.
+
+2. When one valid file number is provided:
+   - The program should attempt to display the corresponding file.
+   - The default cipher key should be used.
+   - The program should exit after displaying the file.
+
+3. When a valid file number and a cipher key are provided:
+   - The program should attempt to display the corresponding file.
+   - The provided cipher key should be used.
+   - The program should exit after displaying the file.
+
+4. When more than two arguments are provided:
+   - The program should display an error message.
+   - The program should exit.
+
+5. When an invalid file number is provided:
+   - The program should display an error message.
+   - The program should exit.

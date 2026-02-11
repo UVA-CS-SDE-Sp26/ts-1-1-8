@@ -23,7 +23,7 @@ public class ProgramcontrolTest {
     }
 
     @Test
-    public void testNumToFile(){
+    public void testNumToFile(){ //check to make sure the number is correctly assigned to file
         FileHandler handler = new StubFileHandler();
         Programcontrol object = new Programcontrol(handler);
         assertEquals("filec.txt", object.numToFile(3));
@@ -46,5 +46,14 @@ public class ProgramcontrolTest {
 
         String[] lists = fileobj.getFileList();
         assertTrue(Arrays.asList(lists).contains("filea.txt"));
+    }
+
+    @Test
+    void testFileContentsIsValid(){
+        FileHandler handler = new StubFileHandler();
+        Programcontrol tester = new Programcontrol(handler);
+        String results = tester.fileContents(1);
+        assertNotNull(results);
+        assertEquals("A", results);
     }
 }

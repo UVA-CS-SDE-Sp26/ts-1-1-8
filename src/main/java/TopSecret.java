@@ -14,10 +14,30 @@ public class TopSecret {
         else if (args.length == 1) {
             displayFile(control, args[0]);
         }
+        //Cipher implementation
         else if (args.length == 2) {
-            displayFile(control, args[0]);
-            // Cipher key will be used later when cipher teammate finishes
+            int number;
+            try {
+                number = Integer.parseInt(args[0]);
+            } catch (NumberFormatException e) {
+                printError("File number must be numeric.");
+                return;
+            }
+            String content = control.fileContents(number);
+            if (content == null) {
+                printError("Invalid file number.");
+                return;
+            }
+
+            try {
+                CipherTool cipher = new CipherTool();
+                String deciphered = cipher.decipher(content);
+                System.out.println(deciphered);
+            } catch (IllegalArgumentException e) {
+                printError(e.getMessage());
+            }
         }
+
         else {
             printError("Invalid number of arguments.");
         }

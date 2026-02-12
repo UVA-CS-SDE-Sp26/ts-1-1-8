@@ -1,0 +1,48 @@
+//Purpose: The CipherTool deciphers encrypted mission files.It reads a cipher key from
+ciphers/key.txt, validates that the key is properly structured, and uses that
+key to translate ciphered text into readable text.
+
+//Pseudocode
+Constructor:
+ - Create File object pointing to "ciphers/key.txt"
+ - If file does not exist or is not a file
+     - Throw IllegalArgumentException
+ - Create BufferedReader
+ - Read first line → assign to actual
+ - Read second line → assign to cipher
+ - Close reader
+ - If either actual or cipher is null
+     - Throw IllegalArgumentException
+ - If actual.length != cipher.length
+     - Throw IllegalArgumentException
+
+ decipher(cipheredText):
+
+ - If cipheredText is null
+     - Return null
+ - Create empty StringBuilder result
+ - For each character in cipheredText
+     - Find index of character in cipher string
+     - If index == -1
+         - Append original character to result
+     - Else
+         - Append actual.charAt(index) to result
+ - Return result as String
+
+ // Planned Tests
+ 1. Valid Decipher
+ - Temporary key file created with known mapping
+ - decipher("bca") returns "abc"
+
+ 2. Invalid Key Length
+ - Temporary key file created with unequal line lengths
+ - Constructor throws IllegalArgumentException
+
+ 3. Non-Mapped Characters
+ - Input contains punctuation or spaces
+ - Characters not found in cipher remain unchanged
+
+ 4. Key File Isolation
+ - Original key.txt is saved before test
+ - Temporary key written during test
+ - Original key restored after test

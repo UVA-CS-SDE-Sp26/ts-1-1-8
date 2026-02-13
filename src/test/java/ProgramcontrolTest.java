@@ -20,7 +20,7 @@ public class ProgramcontrolTest {
             if ("filec.txt".equals(filename)) return "C";
             return null;
         }
-    }
+    } //mockito would not work ->office hour TA's worked through this
 
     @Test
     public void testNumToFile(){ //check to make sure the number is correctly assigned to file
@@ -31,7 +31,7 @@ public class ProgramcontrolTest {
 
     @Test
     //length not 0
-    public void testGetFiles(){
+    public void testGetFiles(){ //make sure there is files to pull (not null/0)
         FileHandler handler = new StubFileHandler();
         Programcontrol fileobj = new Programcontrol(handler);
         String[] lists = fileobj.getFileList();
@@ -39,7 +39,7 @@ public class ProgramcontrolTest {
     }
 
     @Test
-    //length not 0
+    //make sure the list contains the correct files
     public void testFileName(){
         FileHandler handler = new StubFileHandler();
         Programcontrol fileobj = new Programcontrol(handler);
@@ -49,7 +49,7 @@ public class ProgramcontrolTest {
     }
 
     @Test
-    void testFileContentsIsValid(){
+    void testFileContentsIsValid(){ //make sure what is in the files is correct and not null
         FileHandler handler = new StubFileHandler();
         Programcontrol tester = new Programcontrol(handler);
         String results = tester.fileContents(1);

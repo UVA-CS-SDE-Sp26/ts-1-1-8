@@ -1,4 +1,8 @@
 // Purpose
+The TopSecret program is a command-line utility designed to allow users
+to view mission data stored in text files within the system. The program
+is executed from the terminal and supports optional arguments to specify
+which file to display and which cipher key to use for deciphering.
 
 //Command Options:
 1. No Arguments
